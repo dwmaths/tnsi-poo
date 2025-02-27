@@ -115,7 +115,7 @@ Pour cela, il suffit de définir des fonctions à l'intérieur de la classe.
 
                 Quand on appelle une action depuis un objet créé (comme dans l'instruction ```mathis.vieillir()```), python transforme l'instruction en ```Eleve.vieillir(mathis)``` ce qui explique l'erreur obtenue.  
 
-                Pour pouvoir appliquer une action depuis un objet créé, il faut donc ajouter un paramètre à la fonction décrivant l'action. Se paramètre fait implicitement référence à l'objet qui appelle l'action. Par convention, on le nomme **self**.
+                Pour pouvoir appliquer une action depuis un objet créé, il faut donc ajouter un paramètre à la fonction décrivant l'action. Ce paramètre fait implicitement référence à l'objet qui appelle l'action. Par convention, on le nomme **self**.
     2.  1. Corriger le fichier **eleve.py** avec le code suivant :
     ``` python title="Implantation d'une classe Eleve'" linenums="1"
     class Eleve:
