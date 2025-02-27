@@ -1,0 +1,887 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>La programmation orientée objet</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#la-programmation-orientee-objet" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="." title="La programmation orientée objet" class="md-header__button md-logo" aria-label="La programmation orientée objet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            La programmation orientée objet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              La programmation orientée objet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+    
+  
+  La programmation orientée objet
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="La programmation orientée objet" class="md-nav__button md-logo" aria-label="La programmation orientée objet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    La programmation orientée objet
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    La programmation orientée objet
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    La programmation orientée objet
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creer-des-nouveaux-objets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Créer des nouveaux objets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Créer des nouveaux objets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-commencer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pour commencer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-votre-tour" class="md-nav__link">
+    <span class="md-ellipsis">
+      À votre tour
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="la-programmation-orientee-objet">La programmation orientée objet</h1>
+<p>En programmation orientée objet (POO), un objet représente un concept, une idée ou toute entité du monde physique, comme une voiture, une personne ou encore une page d'un livre. Il possède une structure interne et sait interagir avec ses pairs.  </p>
+<p>Il s'agit donc de représenter ces objets et leurs relations ; l'interaction entre les objets via leurs relations permet de concevoir et réaliser les fonctionnalités attendues et de mieux résoudre le ou les problèmes. </p>
+<h2 id="creer-des-nouveaux-objets">Créer des nouveaux objets</h2>
+<h3 id="pour-commencer">Pour commencer</h3>
+<p>La création d'un nouvel objet passe en python, par l'implantation d'<strong>une classe</strong>.  </p>
+<div class="admonition question">
+<p class="admonition-title">Premier exemple</p>
+<ol>
+<li>Dans un fichier python nommé <strong>eleve.py</strong>, coller le code suivant :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Implantation d'une classe Eleve</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Eleve</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="k">pass</span>
+</code></pre></div></td></tr></table></div></li>
+<li>Il est possible à présent de créer des nouveaux élèves.<br />
+Dans la <strong>console</strong>, tester les instructions suivantes :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Nouveaux élèves</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">mathis</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">elise</span>  <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div></li>
+<li>
+<p>Ces deux élèves sont-ils en relation ? Tester l'instruction
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Nouveaux élèves</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">mathis</span> <span class="o">==</span> <span class="n">elise</span>
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Cela signifie que l'objet <code>mathis</code> n'est pas le même objet que <code>elise</code> même s'ils sont tous les deux  du même type.  </p>
+<p>D'ailleurs les instructions <code>type(mathis)</code> et <code>type(elise)</code> le prouvent. </p>
+</div>
+</li>
+</ol>
+</div>
+<p>Ces objets n'ont pour le moment aucune caractéristique. Rien ne permet de différencier l'élève Mathis de l'élève Élise.  </p>
+<div class="admonition question">
+<p class="admonition-title">Personnalisation</p>
+<ol>
+<li>
+<ol>
+<li>Nous allons fournir à Mathis et Élise quelques propriétés.<br />
+Modifier le code de <strong>eleve.py</strong> avec le code suivant :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Implantation d'une classe Eleve</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Eleve</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="k">pass</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">mathis</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">elise</span>  <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="n">mathis</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Catteau&quot;</span>
+</code></pre></div></td></tr></table></div></li>
+<li>
+<p>Dans la console, tester l'instruction <code>mathis.nom</code> puis l'instruction <code>elise.nom</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Lorsqu'on définit une propriété à un objet en dehors de la classe, elle n'est pas partagée par les autres objets du même type.</p>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Corriger le fichier <strong>eleve.py</strong> avec le code suivant :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Implantation d'une classe Eleve'</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Eleve</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Catteau&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">mathis</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">elise</span>  <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div></li>
+<li>
+<p>Tester dans la console chacune des instructions suivantes :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Quelques contrôles</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">mathis</span><span class="o">.</span><span class="n">nom</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">elise</span><span class="o">.</span><span class="n">nom</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">Eleve</span><span class="o">.</span><span class="n">nom</span>
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Quand on définit une propriété à l'intérieur d'une classe, elle est partagée entre tous les objets du type de la classe.</p>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Ajouter une propriété <code>age</code> initialisée à 17 dans la classe <code>Eleve</code>.</li>
+<li>Vérifier que les instructions <code>mathis.age</code> et <code>elise.age</code> renvoient bien <code>17</code>.</li>
+<li>Tester l'instruction <code>Eleve.age += 1</code> et consulter l'âge des deux élèves.</li>
+<li>Tester l'instruction <code>mathis.age += 1</code> et consulter l'âge des deux élèves.</li>
+<li>
+<p>Tester l'instruction <code>Eleve.age += 1</code> et consulter l'âge des deux élèves.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Quand on modifie la propriété d'un objet <strong>immutable</strong> depuis l'objet lui-même, cela créé une nouvelle référence vers cette propriété et la propriété initiale est oubliée.  </p>
+<p>Ce comportement n'est plus vrai avec des objets <strong>mutables</strong> comme les listes.</p>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Corriger le fichier <strong>eleve.py</strong> avec le code suivant :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Implantation d'une classe Eleve'</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Eleve</span><span class="p">:</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Catteau&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>    <span class="n">age</span> <span class="o">=</span> <span class="mi">17</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>    <span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="n">mathis</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="n">elise</span>  <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div></li>
+<li>Tester l'instruction <code>mathis.notes.append(5)</code> et vérifier qu'Élise a aussi hérité d'un 5.</li>
+</ol>
+</li>
+</ol>
+</div>
+<p>Les objets peuvent donc partager des propriétés mais ils peuvent aussi partager des actions.<br />
+Pour cela, il suffit de définir des fonctions à l'intérieur de la classe.</p>
+<div class="admonition question">
+<p class="admonition-title">Partage d'actions</p>
+<ol>
+<li>
+<ol>
+<li>Corriger le fichier <strong>eleve.py</strong> avec le code suivant :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Implantation d'une classe Eleve'</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span>
+<span class="normal"><a href="#__codelineno-7-8">8</a></span>
+<span class="normal"><a href="#__codelineno-7-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Eleve</span><span class="p">:</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Catteau&quot;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>    <span class="n">age</span> <span class="o">=</span> <span class="mi">17</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">vieillir</span><span class="p">():</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>        <span class="n">Eleve</span><span class="o">.</span><span class="n">age</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="n">mathis</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="n">elise</span>  <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div></li>
+<li>Tester les instructions <code>mathis.age</code>, <code>Eleve.vieillir()</code> puis vérifier que Mathis et Élise ont vieilli.</li>
+<li>
+<p>Quelle erreur provoque l'instruction <code>mathis.vieillir()</code> ?</p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Quand on appelle une action depuis un objet créé (comme dans l'instruction <code>mathis.vieillir()</code>), python transforme l'instruction en <code>Eleve.vieillir(mathis)</code> ce qui explique l'erreur obtenue.  </p>
+<p>Pour pouvoir appliquer une action depuis un objet créé, il faut donc ajouter un paramètre à la fonction décrivant l'action. Ce paramètre fait implicitement référence à l'objet qui appelle l'action. Par convention, on le nomme <strong>self</strong>.</p>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>
+<p>Corriger le fichier <strong>eleve.py</strong> avec le code suivant :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Implantation d'une classe Eleve'</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span>
+<span class="normal"><a href="#__codelineno-8-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Eleve</span><span class="p">:</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Catteau&quot;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>    <span class="n">age</span> <span class="o">=</span> <span class="mi">17</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">vieillir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="n">mathis</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="n">elise</span>  <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition note">
+<p class="admonition-title">Remarque</p>
+<p>Comme <code>self</code> fait référence à l'objet créé (par exemple <code>mathis</code>), l'instruction <code>self.age</code> a du sens (ici : <code>mathis.age</code>).</p>
+</div>
+</li>
+<li>
+<p>Tester une à une dans la console, chacune des instructions suivantes :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Quelques contrôles</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">mathis</span><span class="o">.</span><span class="n">age</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">mathis</span><span class="o">.</span><span class="n">vieillir</span><span class="p">()</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="n">mathis</span><span class="o">.</span><span class="n">age</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="n">elise</span><span class="o">.</span><span class="n">age</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="n">Eleve</span><span class="o">.</span><span class="n">vieillir</span><span class="p">(</span><span class="n">mathis</span><span class="p">)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="n">mathis</span><span class="o">.</span><span class="n">age</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="n">elise</span><span class="o">.</span><span class="n">age</span>
+</code></pre></div></td></tr></table></div></p>
+</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Corriger le fichier <strong>eleve.py</strong> avec le code suivant :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Implantation d'une classe Eleve'</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Eleve</span><span class="p">:</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>    <span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Catteau&quot;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>    <span class="n">age</span> <span class="o">=</span> <span class="mi">17</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>    <span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">ajouter_note</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">note</span><span class="p">):</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="n">mathis</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="n">elise</span>  <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div></li>
+<li>
+<p>Tester une à une dans la console, chacune des instructions suivantes :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Quelques contrôles</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span>
+<span class="normal"><a href="#__codelineno-11-6">6</a></span>
+<span class="normal"><a href="#__codelineno-11-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="n">mathis</span><span class="o">.</span><span class="n">notes</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">Eleve</span><span class="o">.</span><span class="n">ajouter_note</span><span class="p">(</span><span class="n">mathis</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">mathis</span><span class="o">.</span><span class="n">notes</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="n">elise</span><span class="o">.</span><span class="n">notes</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="n">elise</span><span class="o">.</span><span class="n">ajouter_note</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="n">mathis</span><span class="o">.</span><span class="n">notes</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="n">elise</span><span class="o">.</span><span class="n">notes</span>
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>On n'oublie pas que <code>self</code> fait référence à l'objet qui appelle l'action.</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<p>On vient de voir que les propriétés mutables partagées posent des difficultés et empêchent la personnalisation.<br />
+Mais si les actions peuvent être personnalisées, les propriétés (même les mutables) le peuvent également !</p>
+<div class="admonition question">
+<p class="admonition-title">Propriétés personnelles</p>
+<ol>
+<li>
+<ol>
+<li>
+<p>Corriger le fichier <strong>eleve.py</strong> avec le code suivant :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Implantation d'une classe Eleve'</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Eleve</span><span class="p">:</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">nommer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">):</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">aimer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">autre_eleve</span><span class="p">:</span><span class="s2">&quot;Eleve&quot;</span><span class="p">):</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">amour</span> <span class="o">=</span> <span class="n">autre_eleve</span><span class="o">.</span><span class="n">nom</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="n">mathis</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="n">elise</span>  <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition note">
+<p class="admonition-title">Important</p>
+<p>L'instruction <code>self.amour = ...</code> définit une propriété <code>amour</code> pour l'objet qui fait appel
+à l'action <code>aimer</code> (ici <code>mathis</code>)</p>
+</div>
+</li>
+<li>
+<p>Tester une à une dans la console, chacune des instructions suivantes :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Quelques contrôles</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span>
+<span class="normal"><a href="#__codelineno-13-7">7</a></span>
+<span class="normal"><a href="#__codelineno-13-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">mathis</span><span class="o">.</span><span class="n">nommer</span><span class="p">(</span><span class="s2">&quot;Mathis&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">mathis</span><span class="o">.</span><span class="n">nom</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">elise</span><span class="o">.</span><span class="n">nom</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="n">elise</span><span class="o">.</span><span class="n">nommer</span><span class="p">(</span><span class="s2">&quot;Élise&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="n">elise</span><span class="o">.</span><span class="n">nom</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="n">mathis</span><span class="o">.</span><span class="n">aimer</span><span class="p">(</span><span class="n">elise</span><span class="p">)</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="n">mathis</span><span class="o">.</span><span class="n">amour</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="n">elise</span><span class="o">.</span><span class="n">amour</span>
+</code></pre></div></td></tr></table></div></p>
+</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>
+<p>Corriger le fichier <strong>eleve.py</strong> avec le code suivant :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Implantation d'une classe Eleve'</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span>
+<span class="normal"><a href="#__codelineno-14-16">16</a></span>
+<span class="normal"><a href="#__codelineno-14-17">17</a></span>
+<span class="normal"><a href="#__codelineno-14-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Eleve</span><span class="p">:</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">initialiser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span>   <span class="o">=</span> <span class="n">nom</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">age</span>   <span class="o">=</span> <span class="n">age</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">notes</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">ajouter_note</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="n">mathis</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="n">elise</span>  <span class="o">=</span> <span class="n">Eleve</span><span class="p">()</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13"></a>
+<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="n">mathis</span><span class="o">.</span><span class="n">initialiser</span><span class="p">(</span><span class="s2">&quot;Mathis&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="n">elise</span><span class="o">.</span><span class="n">initialiser</span><span class="p">(</span><span class="s2">&quot;Élise&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16"></a>
+<a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="n">mathis</span><span class="o">.</span><span class="n">ajouter_note</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="n">elise</span><span class="o">.</span><span class="n">ajouter_note</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition note">
+<p class="admonition-title">Important</p>
+<p>L'étape d'initialisation est essentielle pour définir les propriétés personnelles des objets.</p>
+</div>
+</li>
+<li>
+<p>Tester une à une dans la console, chacune des instructions suivantes :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Quelques contrôles</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">mathis</span><span class="o">.</span><span class="n">notes</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="n">elise</span><span class="o">.</span><span class="n">notes</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="n">mathis</span><span class="o">.</span><span class="n">ajouter_note</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="n">mathis</span><span class="o">.</span><span class="n">notes</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="n">elise</span><span class="o">.</span><span class="n">notes</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="n">Eleve</span><span class="o">.</span><span class="n">notes</span>
+</code></pre></div></td></tr></table></div></p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<p>On se rend compte alors que les instructions <code>mathis = Eleve()</code> et <code>mathis.initialiser("Mathis", 18)</code> ne devraient faire qu'une. C'est le rôle de l'action spéciale <code>__init__</code>.</p>
+<div class="admonition question">
+<p class="admonition-title">Les actions spéciales</p>
+<ol>
+<li>
+<ol>
+<li>Corriger le fichier <strong>eleve.py</strong> avec le code suivant :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Implantation d'une classe Eleve'</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span>
+<span class="normal"><a href="#__codelineno-16-6">6</a></span>
+<span class="normal"><a href="#__codelineno-16-7">7</a></span>
+<span class="normal"><a href="#__codelineno-16-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Eleve</span><span class="p">:</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>        
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="n">mathis</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">(</span><span class="s2">&quot;Mathis&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="n">elise</span>  <span class="o">=</span> <span class="n">Eleve</span><span class="p">(</span><span class="s2">&quot;Élise&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></li>
+<li>Tester une à une dans la console, chacune des instructions suivantes :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Quelques contrôles</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mathis</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">elise</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="mh">0x2665</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mathis</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="mi">128139</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">elise</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div></td></tr></table></div></li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Corriger le fichier <strong>eleve.py</strong> avec le code suivant :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Implantation d'une classe Eleve'</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Eleve</span><span class="p">:</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans)&quot;</span>        
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="n">mathis</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">(</span><span class="s2">&quot;Mathis&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="n">elise</span>  <span class="o">=</span> <span class="n">Eleve</span><span class="p">(</span><span class="s2">&quot;Élise&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></li>
+<li>Tester une à une dans la console, chacune des instructions suivantes :
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Quelques contrôles</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="n">mathis</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="n">elise</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="n">Eleve</span><span class="p">(</span><span class="s2">&quot;Zakaria&quot;</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></li>
+</ol>
+</li>
+</ol>
+</div>
+<h3 id="a-votre-tour">À votre tour</h3>
+<div class="admonition question">
+<p class="admonition-title">Travail personnel</p>
+<ol>
+<li>Écrire une classe modélisant une date de Calendrier.</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2025 David Wrobel
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
